@@ -1,0 +1,218 @@
+$date
+	Mon Jul 17 12:44:51 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module traffic_light_controller_tb $end
+$var wire 12 ! tblightout [11:0] $end
+$var reg 1 " tbclk $end
+$var reg 1 # tbmode $end
+$scope module DUT $end
+$var wire 1 " clk $end
+$var wire 1 # mode $end
+$var reg 12 $ lightout [11:0] $end
+$var reg 12 % next_lightout [11:0] $end
+$var real 1 & elapsed_time $end
+$var real 1 ' next_timer $end
+$var real 1 ( start_timer $end
+$var real 1 ) timer $end
+$var real 1 * timer1 $end
+$var real 1 + timer2 $end
+$var real 1 , timer30 $end
+$var real 1 - timer31 $end
+$var real 1 . timer4 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+r120 .
+r9 -
+r10 ,
+r30 +
+r50 *
+r120 )
+r0 (
+r9 '
+r0 &
+b10001001010 %
+b100001001001 $
+1#
+0"
+b100001001001 !
+$end
+#10
+r10 &
+1"
+#20
+0"
+#30
+r30 &
+1"
+#40
+0"
+#50
+r50 &
+1"
+#60
+0"
+#70
+r70 &
+1"
+#80
+0"
+#90
+r90 &
+1"
+#100
+0"
+#110
+r110 &
+1"
+#120
+0"
+#130
+b1001001100 %
+r50 '
+r130 (
+r9 )
+b10001001010 !
+b10001001010 $
+r130 &
+1"
+#140
+0"
+#150
+b1010001010 %
+r10 '
+r150 (
+r50 )
+b1001001100 !
+b1001001100 $
+r20 &
+1"
+0#
+#160
+0"
+#170
+1"
+#180
+0"
+#190
+r40 &
+1"
+#200
+0"
+#210
+b1100001001 %
+r50 '
+r210 (
+r10 )
+b1010001010 !
+b1010001010 $
+r60 &
+1"
+#220
+0"
+#230
+b1010010001 %
+r10 '
+r230 (
+r50 )
+b1100001001 !
+b1100001001 $
+r20 &
+1"
+#240
+0"
+#250
+1"
+#260
+0"
+#270
+r40 &
+1"
+#280
+0"
+1#
+#290
+b1001100001 %
+r120 '
+r290 (
+r10 )
+b1010010001 !
+b1010010001 $
+r60 &
+1"
+#300
+0"
+#310
+b10001010001 %
+r9 '
+r310 (
+r120 )
+b1001100001 !
+b1001100001 $
+r20 &
+1"
+#320
+0"
+#330
+1"
+#340
+0"
+#350
+r40 &
+1"
+#360
+0"
+#370
+r60 &
+1"
+#380
+0"
+#390
+r80 &
+1"
+#400
+0"
+#410
+r100 &
+1"
+#420
+0"
+#430
+b100001001001 %
+r50 '
+r430 (
+r9 )
+b10001010001 !
+b10001010001 $
+r120 &
+1"
+#440
+0"
+#450
+b10001001010 %
+r10 '
+r450 (
+r50 )
+b100001001001 !
+b100001001001 $
+r20 &
+1"
+#460
+0"
+#470
+1"
+#480
+0"
+#490
+r40 &
+1"
+#500
+0"

@@ -1,0 +1,41 @@
+$date
+	Mon Jul 31 11:09:44 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module multiplier_easy_tb $end
+$var real 1 ! tba $end
+$var real 1 " tbb $end
+$var real 1 # tbyout $end
+$scope module mle $end
+$var wire 1 $ clk $end
+$var wire 1 % resultout $end
+$var real 1 & a $end
+$var real 1 ' b $end
+$var real 1 ( yout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+r0 (
+r0 '
+r0 &
+z%
+z$
+r0 #
+r0 "
+r0 !
+$end
+#20
+r2 "
+r2 '
+r40 #
+r40 (
+r20 !
+r20 &
+#100

@@ -1,0 +1,61 @@
+#! /opt/homebrew/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x1266082f0 .scope module, "inverter_tb" "inverter_tb" 2 2;
+ .timescale 0 0;
+v0x12661c6b0_0 .var "tba", 0 0;
+v0x12661c760_0 .var "tba2", 0 0;
+v0x12661c810_0 .net "tby", 0 0, L_0x12661c990;  1 drivers
+v0x12661c8e0_0 .net "tby2", 0 0, L_0x12661ca80;  1 drivers
+S_0x126608460 .scope module, "inv1" "inverter" 2 11, 3 1 0, S_0x1266082f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "y";
+L_0x12661c990 .functor NOT 1, v0x12661c6b0_0, C4<0>, C4<0>, C4<0>;
+v0x12660bad0_0 .net "a", 0 0, v0x12661c6b0_0;  1 drivers
+v0x12661c290_0 .net "y", 0 0, L_0x12661c990;  alias, 1 drivers
+S_0x12661c340 .scope module, "inv2" "inverter" 2 12, 3 1 0, S_0x1266082f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "y";
+L_0x12661ca80 .functor NOT 1, v0x12661c760_0, C4<0>, C4<0>, C4<0>;
+v0x12661c530_0 .net "a", 0 0, v0x12661c760_0;  1 drivers
+v0x12661c5e0_0 .net "y", 0 0, L_0x12661ca80;  alias, 1 drivers
+    .scope S_0x1266082f0;
+T_0 ;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x12661c6b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x12661c760_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x12661c6b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x12661c760_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x1266082f0;
+T_1 ;
+    %delay 100, 0;
+    %vpi_call 2 22 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0x1266082f0;
+T_2 ;
+    %vpi_call 2 24 "$dumpfile", "inverter.vcd" {0 0 0};
+    %vpi_call 2 25 "$dumpvars", v0x12661c6b0_0, v0x12661c810_0 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "inverter_tb.v";
+    "./inverter.v";

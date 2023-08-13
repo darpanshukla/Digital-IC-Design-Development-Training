@@ -1,0 +1,117 @@
+#! /opt/homebrew/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x146f0c880 .scope module, "full_subtractor_tb" "full_subtractor_tb" 2 2;
+ .timescale 0 0;
+v0x146f1d070_0 .var "tba", 0 0;
+v0x146f1d100_0 .var "tbb", 0 0;
+v0x146f1d190_0 .var "tbbin", 0 0;
+v0x146f1d260_0 .net "tbbout", 0 0, L_0x146f1d940;  1 drivers
+v0x146f1d310_0 .net "tbsubtr", 0 0, L_0x146f1d510;  1 drivers
+S_0x146f0c9f0 .scope module, "DUT" "full_substractor" 2 7, 3 1 0, S_0x146f0c880;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "bin";
+    .port_info 3 /OUTPUT 1 "subtr";
+    .port_info 4 /OUTPUT 1 "bout";
+L_0x146f1d3e0 .functor XOR 1, v0x146f1d070_0, v0x146f1d100_0, C4<0>, C4<0>;
+L_0x146f1d510 .functor XOR 1, L_0x146f1d3e0, v0x146f1d190_0, C4<0>, C4<0>;
+L_0x146f1d600 .functor NOT 1, v0x146f1d070_0, C4<0>, C4<0>, C4<0>;
+L_0x146f1d670 .functor AND 1, L_0x146f1d600, v0x146f1d190_0, C4<1>, C4<1>;
+L_0x146f1d720 .functor XNOR 1, v0x146f1d070_0, v0x146f1d190_0, C4<0>, C4<0>;
+L_0x146f1d8b0 .functor AND 1, L_0x146f1d720, v0x146f1d100_0, C4<1>, C4<1>;
+L_0x146f1d940 .functor OR 1, L_0x146f1d670, L_0x146f1d8b0, C4<0>, C4<0>;
+v0x146f0a680_0 .net *"_ivl_0", 0 0, L_0x146f1d3e0;  1 drivers
+v0x146f1c980_0 .net *"_ivl_10", 0 0, L_0x146f1d8b0;  1 drivers
+v0x146f1ca20_0 .net *"_ivl_4", 0 0, L_0x146f1d600;  1 drivers
+v0x146f1cad0_0 .net *"_ivl_6", 0 0, L_0x146f1d670;  1 drivers
+v0x146f1cb80_0 .net *"_ivl_8", 0 0, L_0x146f1d720;  1 drivers
+v0x146f1cc70_0 .net "a", 0 0, v0x146f1d070_0;  1 drivers
+v0x146f1cd10_0 .net "b", 0 0, v0x146f1d100_0;  1 drivers
+v0x146f1cdb0_0 .net "bin", 0 0, v0x146f1d190_0;  1 drivers
+v0x146f1ce50_0 .net "bout", 0 0, L_0x146f1d940;  alias, 1 drivers
+v0x146f1cf60_0 .net "subtr", 0 0, L_0x146f1d510;  alias, 1 drivers
+    .scope S_0x146f0c880;
+T_0 ;
+    %delay 80, 0;
+    %vpi_call 2 10 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x146f0c880;
+T_1 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x146f1d070_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x146f1d100_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x146f1d190_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x146f1d070_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x146f1d100_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x146f1d190_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x146f1d070_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x146f1d100_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x146f1d190_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x146f1d070_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x146f1d100_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x146f1d190_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x146f1d070_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x146f1d100_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x146f1d190_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x146f1d070_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x146f1d100_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x146f1d190_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x146f1d070_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x146f1d100_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x146f1d190_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x146f1d070_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x146f1d100_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x146f1d190_0, 0, 1;
+    %end;
+    .thread T_1;
+    .scope S_0x146f0c880;
+T_2 ;
+    %vpi_call 2 30 "$dumpfile", "full_subtractor.vcd" {0 0 0};
+    %vpi_call 2 31 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "full_substractor_tb.v";
+    "./full_substractor.v";

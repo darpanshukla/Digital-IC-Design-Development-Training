@@ -1,0 +1,41 @@
+$date
+	Thu Jul 27 14:49:46 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module half_subtractor_tb $end
+$var wire 1 ! tbsubtr $end
+$var wire 1 " tbcarry $end
+$var reg 1 # tba $end
+$var reg 1 $ tbb $end
+$scope module DUT $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 " carry $end
+$var wire 1 ! subtr $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0$
+0#
+0"
+0!
+$end
+#10
+1!
+1$
+#20
+1"
+0$
+1#
+#30
+0"
+0!
+1$
+#40

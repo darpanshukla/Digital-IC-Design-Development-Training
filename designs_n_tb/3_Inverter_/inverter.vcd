@@ -1,0 +1,22 @@
+$date
+	Tue Aug  8 16:39:34 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module inverter_tb $end
+$var wire 1 ! tby $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x!
+$end
+#10
+1!
+#20
+0!
+#100

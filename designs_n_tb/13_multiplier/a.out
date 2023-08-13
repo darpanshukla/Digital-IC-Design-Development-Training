@@ -1,0 +1,31 @@
+#! /opt/homebrew/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x14ee077e0 .scope module, "multiplier_easy" "multiplier_easy" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "yout";
+    .port_info 3 /OUTPUT 1 "resultout";
+    .port_info 4 /INPUT 1 "clk";
+o0x150018010 .functor BUFZ 1, C4<z>; HiZ drive
+v0x14ee079d0_0 .net "a", 0 0, o0x150018010;  0 drivers
+o0x150018040 .functor BUFZ 1, C4<z>; HiZ drive
+v0x14ee179f0_0 .net "b", 0 0, o0x150018040;  0 drivers
+o0x150018070 .functor BUFZ 1, C4<z>; HiZ drive
+v0x14ee17a90_0 .net "clk", 0 0, o0x150018070;  0 drivers
+o0x1500180a0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x14ee17b20_0 .net "resultout", 0 0, o0x1500180a0;  0 drivers
+v0x14ee17bc0_0 .net "yout", 0 0, L_0x14ee17d20;  1 drivers
+L_0x14ee17d20 .arith/mult 1, o0x150018010, o0x150018040;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "multiplier_easy.v";

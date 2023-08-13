@@ -1,0 +1,74 @@
+#! /opt/homebrew/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x1479041e0 .scope module, "memory_design" "memory_design" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "reset";
+    .port_info 2 /INPUT 1 "control";
+    .port_info 3 /OUTPUT 1 "read_data";
+    .port_info 4 /INPUT 8 "write_data";
+    .port_info 5 /INPUT 12 "address";
+o0x148040010 .functor BUFZ 12, C4<zzzzzzzzzzzz>; HiZ drive
+v0x147805890_0 .net "address", 0 11, o0x148040010;  0 drivers
+o0x148040040 .functor BUFZ 1, C4<z>; HiZ drive
+v0x147819420_0 .net "clk", 0 0, o0x148040040;  0 drivers
+o0x148040070 .functor BUFZ 1, C4<z>; HiZ drive
+v0x1478194c0_0 .net "control", 0 0, o0x148040070;  0 drivers
+v0x147819550_0 .var "data", 0 7;
+v0x1478195e0_0 .net "read_data", 0 0, L_0x147819940;  1 drivers
+o0x148040100 .functor BUFZ 1, C4<z>; HiZ drive
+v0x1478196c0_0 .net "reset", 0 0, o0x148040100;  0 drivers
+v0x147819760 .array "sram", 2047 0, 0 7;
+o0x148040130 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x147819800_0 .net "write_data", 0 7, o0x148040130;  0 drivers
+E_0x147806720 .event posedge, v0x147819420_0;
+L_0x147819940 .part v0x147819550_0, 0, 1;
+    .scope S_0x1479041e0;
+T_0 ;
+    %wait E_0x147806720;
+    %load/vec4 v0x1478196c0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 8;
+    %load/vec4 v0x147805890_0;
+    %pad/u 13;
+    %ix/vec4 4;
+    %store/vec4a v0x147819760, 4, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x1478194c0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.2, 8;
+    %load/vec4 v0x147805890_0;
+    %pad/u 13;
+    %ix/vec4 4;
+    %load/vec4a v0x147819760, 4;
+    %store/vec4 v0x147819550_0, 0, 8;
+    %jmp T_0.3;
+T_0.2 ;
+    %load/vec4 v0x1478194c0_0;
+    %inv;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.4, 8;
+    %load/vec4 v0x147819800_0;
+    %load/vec4 v0x147805890_0;
+    %pad/u 13;
+    %ix/vec4 4;
+    %store/vec4a v0x147819760, 4, 0;
+T_0.4 ;
+T_0.3 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "memory_design.v";

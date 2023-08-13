@@ -1,0 +1,64 @@
+#! /opt/homebrew/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x12a707140 .scope module, "trial" "trial" 2 1;
+ .timescale 0 0;
+v0x12a7072b0_0 .net *"_ivl_0", 31 0, L_0x12a717950;  1 drivers
+L_0x110040010 .functor BUFT 1, C4<0000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x12a717250_0 .net *"_ivl_3", 30 0, L_0x110040010;  1 drivers
+L_0x110040058 .functor BUFT 1, C4<00000000000000000000000000000001>, C4<0>, C4<0>, C4<0>;
+v0x12a7172f0_0 .net/2u *"_ivl_4", 31 0, L_0x110040058;  1 drivers
+v0x12a7173a0_0 .net *"_ivl_6", 0 0, L_0x12a717ac0;  1 drivers
+v0x12a717440_0 .net *"_ivl_8", 0 0, L_0x12a717be0;  1 drivers
+v0x12a717530_0 .var "a", 0 0;
+v0x12a7175d0_0 .var "b", 0 0;
+v0x12a717670_0 .var "c", 0 0;
+v0x12a717710_0 .net "d", 0 0, L_0x12a717ce0;  1 drivers
+v0x12a717820_0 .var "e", 0 0;
+v0x12a7178b0_0 .var "f", 0 0;
+L_0x12a717950 .concat [ 1 31 0 0], v0x12a717820_0, L_0x110040010;
+L_0x12a717ac0 .cmp/eq 32, L_0x12a717950, L_0x110040058;
+L_0x12a717be0 .functor MUXZ 1, v0x12a7175d0_0, v0x12a7178b0_0, L_0x12a717ac0, C4<>;
+L_0x12a717ce0 .functor MUXZ 1, L_0x12a717be0, v0x12a717530_0, v0x12a717670_0, C4<>;
+    .scope S_0x12a707140;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x12a717530_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x12a7175d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x12a717670_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x12a717820_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x12a7178b0_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x12a707140;
+T_1 ;
+    %delay 10, 0;
+    %load/vec4 v0x12a717820_0;
+    %pad/u 32;
+    %pushi/vec4 1, 0, 32;
+    %cmp/e;
+    %flag_get/vec4 4;
+    %vpi_call 2 10 "$display", v0x12a717710_0, S<0,vec4,u1> {1 0 0};
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x12a707140;
+T_2 ;
+    %delay 50, 0;
+    %vpi_call 2 12 "$finish" {0 0 0};
+    %jmp T_2;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "trial.v";

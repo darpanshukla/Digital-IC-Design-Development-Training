@@ -1,0 +1,62 @@
+$date
+	Mon Jul 10 17:52:17 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module JK_flipflop_tb $end
+$var wire 1 ! tbyout $end
+$var reg 1 " tbclk $end
+$var reg 1 # tbj $end
+$var reg 1 $ tbk $end
+$scope module DUT $end
+$var wire 1 " clk $end
+$var wire 1 # j $end
+$var wire 1 $ k $end
+$var reg 1 ! yout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0$
+0#
+0"
+x!
+$end
+#11
+1"
+#20
+1#
+#22
+0"
+#33
+1!
+1"
+#40
+0#
+1$
+#44
+0"
+#55
+0!
+1"
+#60
+1#
+#66
+0"
+#77
+1!
+1"
+#80
+0#
+0$
+#88
+0"
+#99
+1"
+#100
+1#

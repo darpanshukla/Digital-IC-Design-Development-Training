@@ -1,0 +1,28 @@
+
+
+Nets represent connections between hardware elements.
+Nets are declared with the keyword wire.
+Nets have values continuously driven on them by the outputs of devices
+that they are connected to.
+Default value of a net = z
+
+wire a ;
+wire b, c;
+
+wire d = 1'b0; // Net d is fixed to logic value 0
+
+net is not a keyword but a class of data types
+ - wire
+ - wand
+ - wor
+ - tri
+ - triand
+ - trior
+ - trireg
+
+Registers represent data storage elements. They are variable.
+Unlike a net, a register does not need a driver.
+Registers are declared by reg.
+Default value of reg = x
+
+reg reset;

@@ -1,0 +1,60 @@
+$date
+	Thu Jul 27 15:31:45 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module full_subtractor_tb $end
+$var wire 1 ! tbsubtr $end
+$var wire 1 " tbbout $end
+$var reg 1 # tba $end
+$var reg 1 $ tbb $end
+$var reg 1 % tbbin $end
+$scope module DUT $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 % bin $end
+$var wire 1 " bout $end
+$var wire 1 ! subtr $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0%
+0$
+0#
+0"
+0!
+$end
+#10
+1"
+1!
+1%
+#20
+0%
+1$
+#30
+0!
+1%
+#40
+0"
+1!
+0%
+0$
+1#
+#50
+0!
+1%
+#60
+0"
+0%
+1$
+#70
+1"
+1!
+1%
+#80

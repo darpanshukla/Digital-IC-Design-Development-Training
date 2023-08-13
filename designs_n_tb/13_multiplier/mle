@@ -1,0 +1,56 @@
+#! /opt/homebrew/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x12e709300 .scope module, "multiplier_easy_tb" "multiplier_easy_tb" 2 2;
+ .timescale 0 0;
+v0x12e719b20_0 .var/real "tba", 0 0;
+v0x12e719bd0_0 .var/real "tbb", 0 0;
+v0x12e719c60_0 .net/real "tbyout", 0 0, L_0x12e719d10;  1 drivers
+S_0x12e706530 .scope module, "mle" "multiplier_easy" 2 7, 3 1 0, S_0x12e709300;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "yout";
+    .port_info 3 /OUTPUT 1 "resultout";
+    .port_info 4 /INPUT 1 "clk";
+v0x12e706720_0 .net/real "a", 0 0, v0x12e719b20_0;  1 drivers
+v0x12e7197f0_0 .net/real "b", 0 0, v0x12e719bd0_0;  1 drivers
+o0x130030070 .functor BUFZ 1, C4<z>; HiZ drive
+v0x12e719890_0 .net "clk", 0 0, o0x130030070;  0 drivers
+o0x1300300a0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x12e719920_0 .net "resultout", 0 0, o0x1300300a0;  0 drivers
+v0x12e7199c0_0 .net/real "yout", 0 0, L_0x12e719d10;  alias, 1 drivers
+L_0x12e719d10 .arith/mult.r 1, v0x12e719b20_0, v0x12e719bd0_0;
+    .scope S_0x12e709300;
+T_0 ;
+    %delay 100, 0;
+    %vpi_call 2 9 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x12e709300;
+T_1 ;
+    %delay 20, 0;
+    %pushi/real 1342177280, 4070; load=20.0000
+    %store/real v0x12e719b20_0;
+    %pushi/real 1073741824, 4067; load=2.00000
+    %store/real v0x12e719bd0_0;
+    %end;
+    .thread T_1;
+    .scope S_0x12e709300;
+T_2 ;
+    %vpi_call 2 17 "$dumpfile", "multiplier_.vcd" {0 0 0};
+    %vpi_call 2 18 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "multiplier_easy_tb.v";
+    "./multiplier_easy.v";
