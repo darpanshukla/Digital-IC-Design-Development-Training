@@ -1,5 +1,5 @@
 # Digital-Design-Development-Training
-This repository contains the verilog development training files and provide workflow at Monk9tech Pvt. Ltd.
+This repository contains the Verilog development training files and provides workflow in a lab.
 
 Promise: To Digital IC Design from scratch
 
